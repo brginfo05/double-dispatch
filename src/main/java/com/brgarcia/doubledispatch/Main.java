@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         new Conta(BigDecimal.TEN)
-                .parcelar(new ParceladorNumeroParcelas(3));
+                .parcelar(new ParceladorNumeroParcelas(2));
     }
 }

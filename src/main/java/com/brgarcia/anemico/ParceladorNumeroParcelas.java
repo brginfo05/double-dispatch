@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParceladorNumeroParcelas {
+public class ParceladorNumeroParcelas implements Parcelador {
 
     private final ContaParceladaValidator contaParceladaValidator;
     private int numeroParcelas;
@@ -17,7 +17,8 @@ public class ParceladorNumeroParcelas {
         this.contaParceladaValidator = contaParceladaValidator;
     }
 
-    public List<Parcela> parcelar(Conta conta) {
+    @Override
+    public void parcelar(Conta conta) {
         List<Parcela> parcelas = new ArrayList();
 
         for(int i = 0; i < numeroParcelas; i++) {
@@ -27,8 +28,6 @@ public class ParceladorNumeroParcelas {
         conta.setParcelas(parcelas);
 
         contaParceladaValidator.validar(conta);
-
-        return parcelas;
     }
 
     private Parcela calcularParcela(Conta conta) {
