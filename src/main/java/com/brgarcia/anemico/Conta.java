@@ -22,6 +22,6 @@ public class Conta {
     }
 
     public void setParcelas(List<Parcela> parcelas) {
-        this.parcelas = Collections.unmodifiableList(parcelas);
+        this.parcelas = parcelas;
     }
 }
