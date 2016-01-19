@@ -14,7 +14,7 @@ public class Conta {
     // Deve garantir as constraints ao construir o objeto
     public Conta(BigDecimal valor) {
         Validate.notNull(valor, "Deve informar o valor da conta");
-        Validate.isTrue(valor.compareTo(valor) > 0, "Valor da conta deve ser maior que zero");
+        Validate.isTrue(valor.compareTo(BigDecimal.ZERO) > 0, "Valor da conta deve ser maior que zero");
 
         this.valor = valor;
     }
