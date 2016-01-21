@@ -8,15 +8,29 @@ import java.util.List;
 
 public class Conta {
 
+    private static final BigDecimal VALOR_MINIMO = BigDecimal.TEN;
+
+    // Entidades possuem id
+    private long numeroConta;
     private BigDecimal valor;
     private List<Parcela> parcelas;
 
     // Deve garantir as constraints ao construir o objeto
-    public Conta(BigDecimal valor) {
+    // Deve existir apenas um construtor primario
+    public Conta(long numeroConta, BigDecimal valor) {
+        Validate.isTrue(numeroConta > 0, "Numero da conta deve ser maior que zero");
         Validate.notNull(valor, "Deve informar o valor da conta");
         Validate.isTrue(valor.compareTo(BigDecimal.ZERO) > 0, "Valor da conta deve ser maior que zero");
 
+        this.numeroConta = numeroConta;
         this.valor = valor;
+    }
+
+    // Construtor secundario: deve receber apenas parametros
+    // existentes no construtor primario. Deve fornecer valores default
+    // para parametros nâo informados
+    public Conta(long numeroConta) {
+        this(numeroConta, VALOR_MINIMO);
     }
 
     public BigDecimal getValor() {
