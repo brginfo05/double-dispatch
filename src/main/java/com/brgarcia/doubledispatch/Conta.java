@@ -63,4 +63,12 @@ public class Conta {
             throw new RuntimeException("A soma das parcelas esta diferente do valor da conta");
         }
     }
+
+    // Declarar o contrato dos recursos que model precisa dentro do próprio model,
+    // dessa forma reduzimos totalmente o acoplamento do model.
+    // O model não depende de ninguém.
+    public interface Parcelador {
+
+        List<Parcela> parcelar(Conta conta);
+    }
 }

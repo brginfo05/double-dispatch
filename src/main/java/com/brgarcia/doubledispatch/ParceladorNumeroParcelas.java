@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.toList;
 
-public class ParceladorNumeroParcelas implements Parcelador {
+public class ParceladorNumeroParcelas implements Conta.Parcelador {
 
     private int numeroParcelas;
 
