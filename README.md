@@ -1,6 +1,6 @@
 # double-dispatch
 Exemplo de dominio utilizando double dispatch pattern VS modelo anemico
 
-- Criando um objeto consistente
-- Garantindo consistencia do objeto durante o ciclo de vida
-- Uso do pattern double dispatch para garantir a concistência ao misturar services e models
+- Criando um domain model consistente
+- Garantindo consistencia do model durante o ciclo de vida
+- Utilizando o pattern double dispatch para garantir a concistência ao misturar services e models
