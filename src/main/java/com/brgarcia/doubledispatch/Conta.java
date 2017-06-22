@@ -26,9 +26,7 @@ public class Conta {
         this.valor = valor;
     }
 
-    // Construtor secundario: deve receber apenas parametros
-    // existentes no construtor primario. Deve fornecer valores default
-    // para parametros nâo informados
+    // Construtor secundario: deve sempre delegar para o construtor primario
     public Conta(long numeroConta) {
         this(numeroConta, VALOR_MINIMO);
     }
